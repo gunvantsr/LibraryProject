@@ -1,0 +1,15 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+    <h1>Book List!</h1>
+    <div class="row">
+        {% for book in books %}
+            <div class="col-md-3">
+                <img src='{{ book.cover.url }}'>
+                <h3>{{ book.title }} </h3>
+                <h4> {{ book.author }} </h4>
+                <a class="btn btn-primary" href="{{book.book_file.url}}">Download!</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
